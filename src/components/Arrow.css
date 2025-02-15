@@ -1,0 +1,53 @@
+.arrow {
+    svg {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        width: 100%;
+        height: 250%;
+        transform: translateY(-50%);
+        fill: currentColor;
+    }
+
+    ul {
+        width: 100%;
+        li {
+            position: relative;
+            width: 100%;
+        }
+        li::after {
+            display: block;
+            content: '';
+            width: 100%;
+            padding-bottom: 40%;
+        }
+        li:last-child:not(:first-child) {
+            position: absolute;
+            bottom: 0;
+            animation: arrow-animation 1s infinite ease-in-out;
+        }
+    }
+}
+
+.arrow.down ul {
+    transform: rotate(180deg);
+}
+
+.arrow.left ul {
+    transform: rotate(270deg);
+}
+
+.arrow.right ul {
+    transform: rotate(90deg);
+}
+
+@keyframes arrow-animation {
+    from {
+        opacity: 0;
+        transform: translateY(120%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
