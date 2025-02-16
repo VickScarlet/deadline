@@ -13,7 +13,7 @@ export default function App() {
             ) : (
                 <OptionPage onStart={options => setOptions(options)} />
             )}
-            <ToastContainer theme="dark" />
+            <ToastContainer theme="dark" position="top-center" />
         </div>
     )
 }
