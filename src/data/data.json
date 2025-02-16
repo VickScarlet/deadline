@@ -130,10 +130,10 @@
             {
                 "id": "UI_PERCENT_BEFORE",
                 "lang": {
-                    "en": "You are better than {percent}% of people",
-                    "zh": "你击败{percent}%的人",
-                    "zh-HK": "你擊敗{percent}%的人",
-                    "ja": "君は {pe​​rcent}% の人に勝ちました"
+                    "en": "Better than {percent}% of people",
+                    "zh": "击败了{percent}%的人",
+                    "zh-HK": "擊敗了{percent}%的人",
+                    "ja": "{pe​​rcent}% の人に勝ちました"
                 }
             },
             {
