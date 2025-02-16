@@ -207,6 +207,8 @@ async function getRandomMap() {
 let random: Awaited<ReturnType<typeof getRandomMap>> | null = null
 
 export async function init() {
+    const q = await database.get('questions', version, 'version')
+    if (!q) await database.clear('questions')
     random = await getRandomMap()
 }
 

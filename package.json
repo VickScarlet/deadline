@@ -1,7 +1,6 @@
 {
   "name": "deadline",
-  "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "xlsx2json": "vt transform -a -s 4 src/**/[!~$]*.xlsx",

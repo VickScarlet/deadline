@@ -1,23 +1,28 @@
-// indexedDB cache
 export class Collection {
     constructor(
         master: Database,
         collection: string,
-        keyPath: string | string[]
+        options?: IDBObjectStoreParameters,
+        indexes?: Index[]
     ) {
         this.#master = master
         this.#collection = collection
-        this.#keyPath = keyPath
+        this.#options = options
+        this.#indexes = indexes
     }
     #master
     #collection
-    #keyPath
+    #options
+    #indexes
 
     get collection() {
         return this.#collection
     }
-    get keyPath() {
-        return this.#keyPath
+    get options() {
+        return this.#options
+    }
+    get indexes() {
+        return this.#indexes
     }
 
     async transaction<T>(
@@ -59,12 +64,18 @@ export class Collection {
     }
 }
 
+export interface Index {
+    name: string
+    keyPath: string | string[]
+    unique?: boolean
+}
 export interface Options {
     dbName: string
     version: number
     collections: {
         collection: string
-        keyPath: string | string[]
+        options?: IDBObjectStoreParameters
+        indexes?: Index[]
     }[]
 }
 
@@ -73,8 +84,11 @@ export class Database {
         this.#dbName = dbName
         this.#version = version
 
-        for (const { collection, keyPath } of collections) {
-            this.#c.set(collection, new Collection(this, collection, keyPath))
+        for (const { collection, options, indexes } of collections) {
+            this.#c.set(
+                collection,
+                new Collection(this, collection, options, indexes)
+            )
         }
         this.#collectionProxy = new Proxy(this.#c, {
             get: (target, prop) => {
@@ -104,12 +118,18 @@ export class Database {
             request.addEventListener('success', () => resolve(request.result))
             request.addEventListener('upgradeneeded', () => {
                 for (const c of this.#c.values()) {
-                    const { collection, keyPath } = c
-                    if (request.result.objectStoreNames.contains(collection))
-                        continue
-                    request.result.createObjectStore(collection, {
-                        keyPath,
-                    })
+                    const { collection, options, indexes } = c
+                    let store
+                    if (!request.result.objectStoreNames.contains(collection))
+                        store = request.result.createObjectStore(
+                            collection,
+                            options
+                        )
+                    else store = request.transaction!.objectStore(collection)
+                    if (!indexes) continue
+                    for (const { name, keyPath, unique } of indexes) {
+                        store.createIndex(name, keyPath, { unique })
+                    }
                 }
             })
         })
@@ -156,15 +176,24 @@ export class Database {
 
 const database = new Database({
     dbName: 'deadline',
-    version: 2,
+    version: 8,
     collections: [
         {
             collection: 'global',
-            keyPath: ['key'],
+            options: { keyPath: 'key' },
+            indexes: [{ name: 'key', keyPath: 'key', unique: true }],
         },
         {
             collection: 'questions',
-            keyPath: ['country', 'age', 'sex', 'version'],
+            options: { keyPath: ['country', 'age', 'sex', 'version'] },
+            indexes: [
+                {
+                    name: 'default',
+                    keyPath: ['country', 'age', 'sex', 'version'],
+                    unique: true,
+                },
+                { name: 'version', keyPath: 'version' },
+            ],
         },
     ],
 })
