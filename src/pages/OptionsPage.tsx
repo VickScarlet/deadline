@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useLanguage } from '@/hooks'
+import { useLanguage, languages as langs } from '@/hooks'
 import { query, type Country, type Age, type Sex, type Base } from '@/data'
 import { Choose } from '@/components/Choose'
 import { type Options } from './ResultPage'
@@ -13,10 +13,6 @@ import './OptionsPage.css'
 
 export interface OptionPageProps {
     onStart?: (options: Options) => void
-}
-
-interface Language extends Base {
-    value: string
 }
 
 interface Choosed<T extends Base> {
@@ -33,20 +29,16 @@ interface UnChoosed {
 type ChooseResult<T extends Base> = Choosed<T> | UnChoosed
 
 export function OptionPage({ onStart }: OptionPageProps) {
-    const { t, setLanguage, languages: langs } = useLanguage()
+    const { t, setLanguage } = useLanguage()
     const [countrys, setCountrys] = useState<Country[]>([])
     const [ages, setAges] = useState<Age[]>([])
     const [sexs, setSexs] = useState<Sex[]>([])
-    const [languages, setLanguages] = useState<Language[]>([])
+
     useEffect(() => {
         setCountrys(query('country'))
         setAges(query('age'))
         setSexs(query('sex'))
     }, [])
-
-    useEffect(() => {
-        setLanguages(langs.map(value => ({ value })))
-    }, [langs])
 
     const [country, setCountry] = useState<ChooseResult<Country>>({
         value: 'UI_C/R',
@@ -114,7 +106,7 @@ export function OptionPage({ onStart }: OptionPageProps) {
             case 'language':
                 return (
                     <Choose
-                        list={languages}
+                        list={langs.map(value => ({ value }))}
                         onChoose={item => {
                             setLanguage(item.value)
                             setChoose('')

@@ -119,6 +119,24 @@
                 }
             },
             {
+                "id": "UI_DEATH",
+                "lang": {
+                    "en": "You can live to {MM}/{DD}/{YYYY} ",
+                    "zh": "你可以活到{YYYY}年{MM}月{DD}日",
+                    "zh-HK": "你可以活到{YYYY}年{MM}月{DD}日",
+                    "ja": "君は{YYYY}年{MM}月{DD}日まで生きられます"
+                }
+            },
+            {
+                "id": "UI_PERCENT_BEFORE",
+                "lang": {
+                    "en": "You are better than {percent}% of people",
+                    "zh": "你击败{percent}%的人",
+                    "zh-HK": "你擊敗{percent}%的人",
+                    "ja": "君は {pe​​rcent}% の人に勝ちました"
+                }
+            },
+            {
                 "id": "UI_C/R",
                 "lang": {
                     "en": "Country/Region",
@@ -5045,9 +5063,21 @@
             "altDilution": {
                 "key": "altDilution",
                 "value": 30
+            },
+            "lifeStd": {
+                "key": "lifeStd",
+                "value": 10
+            },
+            "year": {
+                "key": "year",
+                "value": 31536000
+            },
+            "month": {
+                "key": "month",
+                "value": 2628000
             }
         }
     },
-    "version": "2025-02-15T13:34:27.581Z",
-    "timestamp": "2025-02-15T13:34:27.581Z"
+    "version": "2025-02-16T07:49:48.605Z",
+    "timestamp": "2025-02-16T07:49:48.605Z"
 }

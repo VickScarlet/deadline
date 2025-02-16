@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useAnimate } from 'motion/react'
-import { useLanguage, useTimeFormat } from '@/hooks'
+import { useLanguage, useCountdown } from '@/hooks'
 import type { Country, Age, Sex, Achivement } from '@/data'
 import {
     query,
@@ -9,8 +9,9 @@ import {
     getBaseLife,
     getQuestions,
     processAlt,
+    percentBefore,
 } from '@/data'
-import { callNow } from '@/utils'
+import { yearsLater } from '@/utils'
 import { toast } from 'react-toastify'
 import { Arrow } from '@/components/Arrow'
 import Back from '@/assets/back.svg?react'
@@ -42,7 +43,7 @@ export function ResultPage({
     const [base, setBase] = useState(0)
     const [alter, setAlter] = useState(0)
     const [time, setTime] = useState(0)
-    const [countdown, setCountdown, setPassed] = useTimeFormat(0)
+    const [countdown, setCountdown] = useCountdown(0, start)
     const [questions, setQuestions] = useState<QuestionItem[]>([])
     const [alts, setAlts] = useState<number[][]>([])
     const [cursor, setCursor] = useState(0)
@@ -63,8 +64,9 @@ export function ResultPage({
     }, [country, age, sex, start])
 
     useEffect(() => {
-        setTime(base + alter)
-        setCountdown(base + alter)
+        const life = base + alter
+        setTime(life)
+        setCountdown(life)
     }, [base, alter, setCountdown])
 
     useEffect(() => {
@@ -74,12 +76,6 @@ export function ResultPage({
     useEffect(() => {
         setAverageCountry(country.life[sex.value])
     }, [country, sex])
-
-    useEffect(() => {
-        const loop = () => setPassed(Math.floor((Date.now() - start) / 1000))
-        const interval = setInterval(callNow(loop), 1000)
-        return () => clearInterval(interval)
-    }, [start, setPassed])
 
     useEffect(() => {
         getQuestions(country, age, sex).then(({ questions, alts }) => {
@@ -92,7 +88,7 @@ export function ResultPage({
     useEffect(() => {
         const born = new Date(start).getFullYear() - age.value
         const life = age.value + time
-        const death = Math.floor(born + life)
+        const death = born + life
         setLifeBorn(born)
         setLifeTotal(life)
         setLifeDeath(death)
@@ -214,6 +210,14 @@ export function ResultPage({
                     />
                 </div>
                 <div className="hms">{t('UI_HMS', countdown)}</div>
+                <div className="addition">
+                    <div>{t('UI_DEATH', yearsLater(time))}</div>
+                    <div>
+                        {t('UI_PERCENT_BEFORE', {
+                            percent: percentBefore(time, country, age, sex),
+                        })}
+                    </div>
+                </div>
             </div>
             <ul className="achivements">
                 {achivements.map(

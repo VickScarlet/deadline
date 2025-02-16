@@ -1,6 +1,6 @@
 import { data, version } from '@/data/data.json'
 import { database } from '@/database'
-import { zoneRandom } from '@/utils'
+import { zoneRandom, cdf } from '@/utils'
 
 export { version }
 
@@ -308,4 +308,33 @@ export function getBaseLife(country: Country, age: Age, sex: Sex) {
     return ageValue >= averageValue
         ? getConfig('lifeBaseRandom')
         : averageValue - ageValue
+}
+
+export function getLifeSeconds(life: number) {
+    return life * getConfig('year')
+}
+
+export function calcLife(seconds: number) {
+    const YEAR = getConfig('year')
+    const MONTH = getConfig('month')
+
+    const Y = Math.floor(seconds / YEAR)
+    const M = Math.floor((seconds - Y * YEAR) / MONTH)
+    const D = Math.floor((seconds - Y * YEAR - M * MONTH) / 86400)
+    const h = Math.floor((seconds / 3600) % 24)
+    const m = Math.floor((seconds / 60) % 60)
+    const s = Math.floor(seconds % 60)
+    return { Y, M, D, h, m, s }
+}
+
+export function percentBefore(
+    life: number,
+    country: Country,
+    age: Age,
+    sex: Sex
+) {
+    const x = life + age.value
+    const mean = country.life[sex.value]
+    const std = getConfig('lifeStd')
+    return (cdf(x, mean, std) * 100).toFixed(2).replace(/\.00$/, '')
 }
