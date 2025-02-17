@@ -7,6 +7,8 @@ import App from './App.tsx'
 import './index.css'
 
 callNow(async () => {
+    console.log('Github repo https://github.com/VickScarlet/deadline')
+    console.log('Code by VickScarlet https://github.com/VickScarlet')
     await initDatabase()
     await initData()
     createRoot(document.body).render(
