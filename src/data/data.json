@@ -83,6 +83,87 @@
                 }
             },
             {
+                "id": "UI_SUGGESS",
+                "lang": {
+                    "en": "Health advice",
+                    "zh": "健康建议",
+                    "zh-HK": "健康建議",
+                    "ja": "健康アドバイス"
+                }
+            },
+            {
+                "id": "控制健康体重",
+                "lang": {
+                    "en": "Maintain a healthy weight",
+                    "zh": "控制健康体重",
+                    "zh-HK": "維持健康體重",
+                    "ja": "健康的な体重を維持する"
+                }
+            },
+            {
+                "id": "定期运动",
+                "lang": {
+                    "en": "Exercise regularly",
+                    "zh": "定期运动",
+                    "zh-HK": "定期運動",
+                    "ja": "定期的に運動する"
+                }
+            },
+            {
+                "id": "保持健康睡眠",
+                "lang": {
+                    "en": "Ensure adequate and healthy sleep",
+                    "zh": "保持健康睡眠",
+                    "zh-HK": "保持健康睡眠",
+                    "ja": "健康的な睡眠を確保する"
+                }
+            },
+            {
+                "id": "戒酒",
+                "lang": {
+                    "en": "Quit drinking alcohol",
+                    "zh": "戒酒",
+                    "zh-HK": "戒酒",
+                    "ja": "アルコールを断つ"
+                }
+            },
+            {
+                "id": "戒烟",
+                "lang": {
+                    "en": "Quit smoking",
+                    "zh": "戒烟",
+                    "zh-HK": "戒煙",
+                    "ja": "喫煙を断つ"
+                }
+            },
+            {
+                "id": "降低身心压力",
+                "lang": {
+                    "en": "Reduce physical and mental stress",
+                    "zh": "降低身心压力",
+                    "zh-HK": "降低身心壓力",
+                    "ja": "身体的および精神的ストレスを減らす "
+                }
+            },
+            {
+                "id": "UI_SUGGESS_GOOD",
+                "lang": {
+                    "en": "Your lifestyle habits are very healthy\r\nPlease continue to maintain them",
+                    "zh": "你的生活习惯很健康，请继续保持",
+                    "zh-HK": "你的生活習慣很健康，請繼續保持",
+                    "ja": "現在の生活習慣は極めて健全です\r\nこの良好な状態を維持し続けてください"
+                }
+            },
+            {
+                "id": "UI_SUGGESS_EXTEND",
+                "lang": {
+                    "en": "Your life expectancy will increase by: {years} years",
+                    "zh": "你的寿命将延长：{years}年",
+                    "zh-HK": "您的壽命將延長：{years}年",
+                    "ja": "あなたの寿命は{years}年延びます"
+                }
+            },
+            {
                 "id": "UI_TITLE",
                 "lang": {
                     "en": "Death Countdown",
@@ -94,16 +175,16 @@
             {
                 "id": "UI_SUB_TITLE",
                 "lang": {
-                    "en": "How much time do you have left in your life?",
+                    "en": "How Much Time Is Left in Your Life?",
                     "zh": "你的生命还剩下多久？",
-                    "zh-HK": "你的生命還剩下多久？",
-                    "ja": "あなたの人生にはあとどれくらいの時間が残っていますか？"
+                    "zh-HK": "你的生命還剩下多長時間？",
+                    "ja": "あなたの命はあとどれくらい残っているのか？"
                 }
             },
             {
                 "id": "UI_START",
                 "lang": {
-                    "en": "Start countdown",
+                    "en": "Start the Countdown",
                     "zh": "开始倒计时",
                     "zh-HK": "開始倒計時",
                     "ja": "カウントダウン開始"
@@ -112,28 +193,28 @@
             {
                 "id": "UI_COUNTDOWN",
                 "lang": {
-                    "en": "Your life is left:",
+                    "en": "Your Life Is Left With:",
                     "zh": "你的生命还剩下：",
                     "zh-HK": "你的生命還剩下：",
-                    "ja": "君の残る命は："
+                    "ja": "あなたの命に残された時間："
                 }
             },
             {
                 "id": "UI_DEATH",
                 "lang": {
-                    "en": "You can live to {MM}/{DD}/{YYYY} ",
+                    "en": "You can live until {MM}/{DD}/{YYYY} ",
                     "zh": "你可以活到{YYYY}年{MM}月{DD}日",
                     "zh-HK": "你可以活到{YYYY}年{MM}月{DD}日",
-                    "ja": "君は{YYYY}年{MM}月{DD}日まで生きられます"
+                    "ja": "あなたは{YYYY}年{MM}月{DD}日まで生きることができます"
                 }
             },
             {
                 "id": "UI_PERCENT_BEFORE",
                 "lang": {
-                    "en": "Better than {percent}% of people",
+                    "en": "Beat {percent}% of people",
                     "zh": "击败了{percent}%的人",
                     "zh-HK": "擊敗了{percent}%的人",
-                    "ja": "{pe​​rcent}% の人に勝ちました"
+                    "ja": "{percent}% の人に勝った"
                 }
             },
             {
@@ -4774,7 +4855,8 @@
                             ]
                         }
                     }
-                ]
+                ],
+                "suggess": "控制健康体重"
             },
             {
                 "question": "Q2你的运动频率如何",
@@ -4829,7 +4911,8 @@
                             ]
                         }
                     }
-                ]
+                ],
+                "suggess": "定期运动"
             },
             {
                 "question": "Q3你的睡眠是否充足",
@@ -4874,7 +4957,8 @@
                             ]
                         }
                     }
-                ]
+                ],
+                "suggess": "保持健康睡眠"
             },
             {
                 "question": "Q4你的饮酒频率是",
@@ -4926,7 +5010,8 @@
                             ]
                         }
                     }
-                ]
+                ],
+                "suggess": "戒酒"
             },
             {
                 "question": "Q5你的吸烟频率是",
@@ -4988,7 +5073,8 @@
                             "args": -15
                         }
                     }
-                ]
+                ],
+                "suggess": "戒烟"
             },
             {
                 "question": "Q6你的压力与情绪状态如何",
@@ -5030,7 +5116,8 @@
                             ]
                         }
                     }
-                ]
+                ],
+                "suggess": "降低身心压力"
             }
         ],
         "random": [
@@ -5066,7 +5153,7 @@
             },
             "lifeStd": {
                 "key": "lifeStd",
-                "value": 10
+                "value": 12
             },
             "year": {
                 "key": "year",

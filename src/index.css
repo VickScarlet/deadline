@@ -48,6 +48,13 @@ svg {
     }
 }
 
+.btn.success {
+    border-color: #8f8;
+}
+.btn.success:hover {
+    border-color: #4f4;
+}
+
 .btn:hover {
     border-color: #08f;
 }

@@ -58,6 +58,7 @@ export interface Question {
     id: number
     question: string
     options: QuestionOption[]
+    suggess: string
 }
 
 export interface Random {
@@ -226,9 +227,9 @@ interface AltsData {
 }
 
 export async function getQuestions(country: Country, age: Age, sex: Sex) {
-    const questions = query('question').map(({ question, options }) => ({
-        question,
+    const questions = query('question').map(({ options, ...other }) => ({
         options: options.map(({ opt }) => opt),
+        ...other,
     }))
     const q = await database.get<AltsData>('questions', [
         country.value,

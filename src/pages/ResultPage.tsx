@@ -32,6 +32,7 @@ export interface ResultPageProps {
 interface QuestionItem {
     question: string
     options: string[]
+    suggess: string
 }
 
 export function ResultPage({
@@ -180,6 +181,43 @@ export function ResultPage({
         )
     }
 
+    const toastSuggess = () => {
+        if (altWorst >= 0) {
+            toast(t('UI_SUGGESS_GOOD'))
+            return
+        }
+
+        const { alt } = processAlt(
+            base,
+            alts.map(a => Math.max(...a))
+        )
+
+        toast(
+            <ul>
+                {selected
+                    .map((s, i) => ({ i, a: alts[i][s] }))
+                    .filter(a => a.a < 0)
+                    .map(({ i }, n) => (
+                        <li key={i}>
+                            {n + 1}. {t(questions[i].suggess)}
+                        </li>
+                    ))}
+                {
+                    <li>
+                        <b>
+                            {t('UI_SUGGESS_EXTEND', {
+                                years: (alt - alter)
+                                    .toFixed(2)
+                                    .replace('.00', ''),
+                            })}
+                        </b>
+                    </li>
+                }
+            </ul>
+        )
+        selected.filter(a => a >= 0).map((s, i) => alts[i][s])
+    }
+
     return (
         <div id="result">
             <div className="btn back" onClick={onBack}>
@@ -266,7 +304,13 @@ export function ResultPage({
                         </div>
                     )}
                     {cursor === questions.length - 1 ? (
-                        <div className="btn disabled">{t('UI_NQ')}</div>
+                        selected.includes(-1) ? (
+                            <div className="btn disabled">{t('UI_NQ')}</div>
+                        ) : (
+                            <div className="btn success" onClick={toastSuggess}>
+                                {t('UI_SUGGESS')}
+                            </div>
+                        )
                     ) : (
                         <div
                             className="btn"

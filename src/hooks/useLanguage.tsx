@@ -15,7 +15,7 @@ export interface FormatData {
 }
 function format(template: string, formatData: FormatData) {
     return template.replace(/\{([^{}]+)\}/g, (match, key) => {
-        return (formatData[key] as string) || match
+        return (formatData[key.trim()] as string) || match
     })
 }
 
