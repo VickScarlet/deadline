@@ -189,7 +189,9 @@ export function ResultPage({
 
         const { alt } = processAlt(
             base,
-            alts.map(a => Math.max(...a))
+            selected.map((s, i) =>
+                alts[i][s] >= 0 ? alts[i][s] : Math.max(...alts[i])
+            )
         )
 
         toast(
