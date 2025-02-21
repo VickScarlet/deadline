@@ -37,13 +37,7 @@ export function yearsLater(year: number) {
     return formatDate(date)
 }
 
-export function pdf(x: number, mean: number, std: number): number {
-    return (
-        Math.exp(-((x - mean) ** 2) / (2 * std ** 2)) /
-        (std * Math.sqrt(2 * Math.PI))
-    )
-}
-export function cdf(x: number, mean: number, std: number): number {
+export function normalCDF(x: number, mean: number, std: number): number {
     const z = (x - mean) / std
     return 0.5 * (1 + erf(z / Math.sqrt(2)))
 }
@@ -66,4 +60,19 @@ function erf(x: number): number {
         ((((a5 * t + a4) * t + a3) * t + a2) * t + a1) * t * Math.exp(-x * x)
 
     return sign * y
+}
+
+export function weibullCDF(x: number, k: number, scale: number): number {
+    if (x < 0) {
+        return 0
+    }
+    return 1 - Math.exp(-Math.pow(x / scale, k))
+}
+
+export function logNormalCDF(x: number, mean: number, std: number): number {
+    if (x <= 0) {
+        return 0
+    }
+    const z = (Math.log(x) - mean) / std
+    return 0.5 * (1 + erf(z / Math.sqrt(2)))
 }

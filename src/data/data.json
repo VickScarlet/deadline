@@ -5151,9 +5151,9 @@
                 "key": "altDilution",
                 "value": 30
             },
-            "lifeStd": {
-                "key": "lifeStd",
-                "value": 12
+            "lifeBeta": {
+                "key": "lifeBeta",
+                "value": 3.8
             },
             "year": {
                 "key": "year",

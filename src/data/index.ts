@@ -1,6 +1,6 @@
 import { data, version } from '@/data/data.json'
 import { database } from '@/database'
-import { zoneRandom, cdf } from '@/utils'
+import { zoneRandom, weibullCDF } from '@/utils'
 
 export { version }
 
@@ -335,7 +335,7 @@ export function percentBefore(
     sex: Sex
 ) {
     const x = life + age.value
-    const mean = country.life[sex.value]
-    const std = getConfig('lifeStd')
-    return (cdf(x, mean, std) * 100).toFixed(2).replace(/\.00$/, '')
+    const average = country.life[sex.value]
+    const beta = getConfig('lifeBeta')
+    return (weibullCDF(x, beta, average) * 100).toFixed(2).replace(/\.00$/, '')
 }
