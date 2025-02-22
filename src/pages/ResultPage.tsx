@@ -254,7 +254,9 @@ export function ResultPage({
                     <div>{t('UI_DEATH', yearsLater(time))}</div>
                     <div>
                         {t('UI_PERCENT_BEFORE', {
-                            percent: percentBefore(time, country, age, sex),
+                            percent: parseFloat(
+                                percentBefore(time, age).toFixed(2)
+                            ),
                         })}
                     </div>
                 </div>

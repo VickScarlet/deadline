@@ -1,6 +1,6 @@
 import { data, version } from '@/data/data.json'
 import { database } from '@/database'
-import { zoneRandom, weibullCDF } from '@/utils'
+import { zoneRandom } from '@/utils'
 
 export { version }
 
@@ -259,14 +259,15 @@ export async function getQuestions(country: Country, age: Age, sex: Sex) {
     return { questions, alts }
 }
 
-export function getConfig(key: string) {
+export function getConfig<T = number>(key: string, raw = false) {
     const d = query('config')[key]
     if (!d) throw new Error(`Unknown config key: ${key}`)
     const v = d.value
-    if (typeof v !== 'object') return v
+    if (raw) return v as T
+    if (typeof v !== 'object') return v as T
     switch (v.type) {
         case 'random':
-            return zoneRandom(...v.args)
+            return zoneRandom(...v.args) as T
     }
 }
 
@@ -328,14 +329,15 @@ export function calcLife(seconds: number) {
     return { Y, M, D, h, m, s }
 }
 
-export function percentBefore(
-    life: number,
-    country: Country,
-    age: Age,
-    sex: Sex
-) {
+export function percentBefore(life: number, age: Age) {
     const x = life + age.value
-    const average = country.life[sex.value]
-    const beta = getConfig('lifeBeta')
-    return (weibullCDF(x, beta, average) * 100).toFixed(2).replace(/\.00$/, '')
+    const distributed = getConfig<[number, number][]>('lifeDistributed', true)
+    let lm = 0
+    let lv = 0
+    for (const [m, v] of distributed) {
+        if (x < m) return (lv + ((v - lv) * (x - lm)) / (m - lm)) / 100
+        lm = m
+        lv = v
+    }
+    return 100
 }
