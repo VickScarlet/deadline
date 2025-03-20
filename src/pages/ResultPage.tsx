@@ -195,12 +195,18 @@ export function ResultPage({
         )
 
         toast(
-            <ul>
+            <ul style={{ lineHeight: 1.2 }}>
                 {selected
                     .map((s, i) => ({ i, a: alts[i][s] }))
                     .filter(a => a.a < 0)
                     .map(({ i }, n) => (
-                        <li key={i} style={{ display: 'inline-flex' }}>
+                        <li
+                            key={i}
+                            style={{
+                                display: 'inline-flex',
+                                paddingBottom: 10,
+                            }}
+                        >
                             <span style={{ flex: 'none', paddingRight: 5 }}>
                                 {n + 1}.
                             </span>

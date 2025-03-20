@@ -94,73 +94,73 @@
             {
                 "id": "控制健康体重",
                 "lang": {
-                    "en": "Maintain a Healthy Weight: Reducing daily calorie intake by the equivalent of a piece of fried chicken. can help lose 2 kg per month and lower the risk of obesity-related diseases.",
-                    "zh": "控制健康体重：每天减少相当于一杯奶茶的热量摄入，每月可减重 2 公斤，降低肥胖相关疾病风险。",
-                    "zh-HK": "控制健康體重： 每天減少相當於一杯奶茶的熱量攝取，每月可減重 2 公斤，降低肥胖相關疾病風險。\r\n",
-                    "ja": "健康的な体重を維持する: 1日あたりミルクティー1杯分のカロリーを減らすことで、1か月に2kgの減量が可能になり、肥満関連疾患のリスクを低減できます。"
+                    "en": "<b>Maintain a Healthy Weight:</b> Reducing daily calorie intake by the equivalent of a piece of fried chicken. can help lose 2 kg per month and lower the risk of obesity-related diseases.",
+                    "zh": "<b>控制健康体重：</b>每天减少相当于一杯奶茶的热量摄入，每月可减重 2 公斤，降低肥胖相关疾病风险。",
+                    "zh-HK": "<b>控制健康體重：</b>每天減少相當於一杯奶茶的熱量攝取，每月可減重 2 公斤，降低肥胖相關疾病風險。\r\n",
+                    "ja": "<b>健康的な体重を維持する: </b>1日あたりミルクティー1杯分のカロリーを減らすことで、1か月に2kgの減量が可能になり、肥満関連疾患のリスクを低減できます。"
                 }
             },
             {
                 "id": "定期运动",
                 "lang": {
-                    "en": "Regular Exercise: Increasing walking speed during daily walks can significantly reduce the risk of cardiovascular disease. Alternatively, choose a preferred activity such as playing sports or cycling to gradually make exercise a habit.",
-                    "zh": "定期运动：每天步行时加快走路速度，可大幅降低心血管疾病和猝死风险。或选择喜欢的运动形式，如打球或骑行，逐渐让锻炼成为日常习惯。",
-                    "zh-HK": "定期運動： 每天步行時加快步速，可大幅降低心血管疾病及猝死風險。或者選擇喜愛的運動，如打球或騎單車，逐步養成運動習慣。",
-                    "ja": "定期的な運動: 毎日のウォーキングで歩く速度を上げるだけで、心血管疾患や突然死のリスクを大幅に減らすことができます。また、スポーツやサイクリングなど好きな運動を選び、少しずつ習慣化しましょう。"
+                    "en": "<b>Regular Exercise: </b>Increasing walking speed during daily walks can significantly reduce the risk of cardiovascular disease. Alternatively, choose a preferred activity such as playing sports or cycling to gradually make exercise a habit.",
+                    "zh": "<b>定期运动：</b>每天步行时加快走路速度，可大幅降低心血管疾病和猝死风险。或选择喜欢的运动形式，如打球或骑行，逐渐让锻炼成为日常习惯。",
+                    "zh-HK": "<b>定期運動：</b>每天步行時加快步速，可大幅降低心血管疾病及猝死風險。或者選擇喜愛的運動，如打球或騎單車，逐步養成運動習慣。",
+                    "ja": "<b>定期的な運動: </b>毎日のウォーキングで歩く速度を上げるだけで、心血管疾患や突然死のリスクを大幅に減らすことができます。また、スポーツやサイクリングなど好きな運動を選び、少しずつ習慣化しましょう。"
                 }
             },
             {
                 "id": "保持健康睡眠",
                 "lang": {
-                    "en": "Healthy Sleep Habits: Maintaining 7-9 hours of sleep per night is beneficial. Start by setting an alarm for a fixed bedtime tonight, then gradually adjust it earlier to establish a routine.",
-                    "zh": "保持健康睡眠：每晚保持 7-9 小时睡眠，可以先从今晚定闹钟固定时间睡觉开始，然后逐步提前闹钟时间，养成习惯。",
-                    "zh-HK": "保持健康睡眠： 每晚維持 7-9 小時睡眠有助於身心健康。可從今晚開始設定固定睡覺時間，然後逐步提前，建立良好作息。",
-                    "ja": "健康的な睡眠習慣: 毎晩7～9時間の睡眠を確保することが重要です。まずは今夜、就寝時間を固定するアラームを設定し、徐々に早めて習慣化しましょう。"
+                    "en": "<b>Healthy Sleep Habits:</b> Maintaining 7-9 hours of sleep per night is beneficial. Start by setting an alarm for a fixed bedtime tonight, then gradually adjust it earlier to establish a routine.",
+                    "zh": "<b>保持健康睡眠：</b>每晚保持 7-9 小时睡眠，可以先从今晚定闹钟固定时间睡觉开始，然后逐步提前闹钟时间，养成习惯。",
+                    "zh-HK": "<b>保持健康睡眠：</b>每晚維持 7-9 小時睡眠有助於身心健康。可從今晚開始設定固定睡覺時間，然後逐步提前，建立良好作息。",
+                    "ja": "<b>健康的な睡眠習慣: </b>毎晩7～9時間の睡眠を確保することが重要です。まずは今夜、就寝時間を固定するアラームを設定し、徐々に早めて習慣化しましょう。"
                 }
             },
             {
                 "id": "戒酒",
                 "lang": {
-                    "en": "Reduce Alcohol Consumption: Cutting down alcohol intake by two occasions per week can significantly enhance liver recovery and reduce long-term cancer risk. Opt for non-alcoholic beverages in non-essential drinking situations.",
-                    "zh": "减少饮酒：每周减少 2 次饮酒，肝脏修复能力可显著提升，长期降低癌症风险。在非必要场合尽量选择无酒精饮料替代。",
-                    "zh-HK": "減少飲酒： 每週減少 2 次飲酒，有助於肝臟修復，並降低長遠的癌症風險。在非必要場合，盡量選擇無酒精飲品作替代。",
-                    "ja": "飲酒を減らす: 週に2回の飲酒を減らすことで、肝臓の回復力が向上し、長期的にがんのリスクを低減できます。不要な飲酒の場面では、できるだけノンアルコール飲料を選びましょう。"
+                    "en": "<b>Reduce Alcohol Consumption:</b> Cutting down alcohol intake by two occasions per week can significantly enhance liver recovery and reduce long-term cancer risk. Opt for non-alcoholic beverages in non-essential drinking situations.",
+                    "zh": "<b>减少饮酒：</b>每周减少 2 次饮酒，肝脏修复能力可显著提升，长期降低癌症风险。在非必要场合尽量选择无酒精饮料替代。",
+                    "zh-HK": "<b>減少飲酒：</b>每週減少 2 次飲酒，有助於肝臟修復，並降低長遠的癌症風險。在非必要場合，盡量選擇無酒精飲品作替代。",
+                    "ja": "<b>飲酒を減らす: </b>週に2回の飲酒を減らすことで、肝臓の回復力が向上し、長期的にがんのリスクを低減できます。不要な飲酒の場面では、できるだけノンアルコール飲料を選びましょう。"
                 }
             },
             {
                 "id": "戒烟",
                 "lang": {
-                    "en": "Reduce Smoking: Try quitting smoking for just one day—within 24 hours, your risk of heart disease begins to decline, and after one year, it is reduced by 50%. Gradually decrease the number of cigarettes smoked each day to break the habit.",
-                    "zh": "减少吸烟：先尝试戒烟一天，24 小时后，心脏病风险开始下降，1 年后降低 50%。试着每天少抽一根烟，逐步摆脱烟瘾。",
-                    "zh-HK": "減少吸煙： 嘗試先戒煙一天，24 小時後，心臟病風險開始下降，1 年後可減少 50%。每天減少吸煙數量，逐步擺脫煙癮。",
-                    "ja": "喫煙を減らす: まず1日禁煙してみましょう。24時間後には心臓病のリスクが低下し、1年後には50%減少します。1日1本ずつ本数を減らし、徐々に禁煙を達成しましょう。"
+                    "en": "<b>Reduce Smoking:</b> Try quitting smoking for just one day—within 24 hours, your risk of heart disease begins to decline, and after one year, it is reduced by 50%. Gradually decrease the number of cigarettes smoked each day to break the habit.",
+                    "zh": "<b>减少吸烟：</b>先尝试戒烟一天，24 小时后，心脏病风险开始下降，1 年后降低 50%。试着每天少抽一根烟，逐步摆脱烟瘾。",
+                    "zh-HK": "<b>減少吸煙：</b>嘗試先戒煙一天，24 小時後，心臟病風險開始下降，1 年後可減少 50%。每天減少吸煙數量，逐步擺脫煙癮。",
+                    "ja": "<b>喫煙を減らす: </b>まず1日禁煙してみましょう。24時間後には心臓病のリスクが低下し、1年後には50%減少します。1日1本ずつ本数を減らし、徐々に禁煙を達成しましょう。"
                 }
             },
             {
                 "id": "降低身心压力",
                 "lang": {
-                    "en": "Lower Mental and Physical Stress: Practicing deep breathing or meditation for 10 minutes daily, or listening to relaxing music, can help alleviate anxiety, improve focus, and restore mental balance.",
-                    "zh": "降低身心压力：每天进行 10 分钟深呼吸或冥想，听一听放松的音乐，有助于降低焦虑，提高专注力，帮助恢复心理平衡。",
-                    "zh-HK": "降低身心壓力： 每天進行 10 分鐘深呼吸或冥想，或聆聽輕鬆音樂，有助減輕焦慮、提升專注力，並幫助恢復心理平衡。",
-                    "ja": "心身のストレスを軽減する: 毎日10分間の深呼吸や瞑想、リラックスできる音楽を聴くことで、不安を和らげ、集中力を高め、精神的なバランスを取り戻すのに役立ちます。"
+                    "en": "<b>Lower Mental and Physical Stress:</b> Practicing deep breathing or meditation for 10 minutes daily, or listening to relaxing music, can help alleviate anxiety, improve focus, and restore mental balance.",
+                    "zh": "<b>降低身心压力：</b>每天进行 10 分钟深呼吸或冥想，听一听放松的音乐，有助于降低焦虑，提高专注力，帮助恢复心理平衡。",
+                    "zh-HK": "<b>降低身心壓力：</b>每天進行 10 分鐘深呼吸或冥想，或聆聽輕鬆音樂，有助減輕焦慮、提升專注力，並幫助恢復心理平衡。",
+                    "ja": "<b>心身のストレスを軽減する: </b>毎日10分間の深呼吸や瞑想、リラックスできる音楽を聴くことで、不安を和らげ、集中力を高め、精神的なバランスを取り戻すのに役立ちます。"
                 }
             },
             {
                 "id": "UI_SUGGESS_GOOD",
                 "lang": {
-                    "en": "Your lifestyle habits are very healthy\r\nPlease continue to maintain them",
-                    "zh": "你的生活习惯很健康，请继续保持",
-                    "zh-HK": "你的生活習慣很健康，請繼續保持",
-                    "ja": "現在の生活習慣は極めて健全です\r\nこの良好な状態を維持し続けてください"
+                    "en": "<span style=\"color:#49da54;\">Your lifestyle habits are very healthy\r\nPlease continue to maintain them</span>",
+                    "zh": "<span style=\"color:#49da54;\">你的生活习惯很健康，请继续保持</span>",
+                    "zh-HK": "<span style=\"color:#49da54;\">你的生活習慣很健康，請繼續保持</span>",
+                    "ja": "<span style=\"color:#49da54;\">現在の生活習慣は極めて健全です\r\nこの良好な状態を維持し続けてください</span>"
                 }
             },
             {
                 "id": "UI_SUGGESS_EXTEND",
                 "lang": {
-                    "en": "Your life expectancy will increase by: <span style=\"color:#49da54;\">{years} years</span>",
-                    "zh": "你的寿命将延长：<span style=\"color:#49da54;\">{years} 年</span>",
-                    "zh-HK": "您的壽命將延長：<span style=\"color:#49da54;\">{years} 年</span>",
-                    "ja": "あなたの寿命は<span style=\"color:#49da54;\">{years} 年</span>延びます"
+                    "en": "<b>Your life expectancy will increase by: </b><span style=\"color:#49da54;\">{years} years</span>",
+                    "zh": "<b>你的寿命将延长：</b><span style=\"color:#49da54;\">{years} 年</span>",
+                    "zh-HK": "<b>您的壽命將延長：</b><span style=\"color:#49da54;\">{years} 年</span>",
+                    "ja": "<b>あなたの寿命は<span style=\"color:#49da54;\">{years} 年</span>延びます</b>"
                 }
             },
             {
@@ -5218,6 +5218,6 @@
             }
         }
     },
-    "version": "2025-03-20T10:41:12.633Z",
-    "timestamp": "2025-03-20T10:41:12.633Z"
+    "version": "2025-03-20T11:05:47.604Z",
+    "timestamp": "2025-03-20T11:05:47.604Z"
 }
