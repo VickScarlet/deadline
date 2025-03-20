@@ -157,10 +157,10 @@
             {
                 "id": "UI_SUGGESS_EXTEND",
                 "lang": {
-                    "en": "Your life expectancy will increase by: {years} years",
-                    "zh": "你的寿命将延长：{years}年",
-                    "zh-HK": "您的壽命將延長：{years}年",
-                    "ja": "あなたの寿命は{years}年延びます"
+                    "en": "Your life expectancy will increase by: <span style=\"color:#49da54;\">{years} years</span>",
+                    "zh": "你的寿命将延长：<span style=\"color:#49da54;\">{years} 年</span>",
+                    "zh-HK": "您的壽命將延長：<span style=\"color:#49da54;\">{years} 年</span>",
+                    "ja": "あなたの寿命は<span style=\"color:#49da54;\">{years} 年</span>延びます"
                 }
             },
             {
@@ -5218,6 +5218,6 @@
             }
         }
     },
-    "version": "2025-03-20T09:51:16.927Z",
-    "timestamp": "2025-03-20T09:51:16.927Z"
+    "version": "2025-03-20T10:41:12.633Z",
+    "timestamp": "2025-03-20T10:41:12.633Z"
 }

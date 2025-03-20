@@ -201,22 +201,29 @@ export function ResultPage({
                     .filter(a => a.a < 0)
                     .map(({ i }, n) => (
                         <li key={i}>
-                            {n + 1}. {t(questions[i].suggess)}
+                            <span>{n + 1}.</span>
+                            <span
+                                dangerouslySetInnerHTML={{
+                                    __html: t(questions[i].suggess),
+                                }}
+                            />
                         </li>
                     ))}
                 {
                     <li>
-                        <b>
-                            {t('UI_SUGGESS_EXTEND', {
-                                years: (alt - alter)
-                                    .toFixed(2)
-                                    .replace('.00', ''),
-                            })}
-                        </b>
+                        <span
+                            dangerouslySetInnerHTML={{
+                                __html: t('UI_SUGGESS_EXTEND', {
+                                    years: (alt - alter)
+                                        .toFixed(2)
+                                        .replace('.00', ''),
+                                }),
+                            }}
+                        />
                     </li>
                 }
             </ul>,
-            { autoClose: false, position: 'bottom-center' }
+            { autoClose: false, closeOnClick: true, position: 'bottom-center' }
         )
         selected.filter(a => a >= 0).map((s, i) => alts[i][s])
     }
