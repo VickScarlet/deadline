@@ -183,7 +183,11 @@ export function ResultPage({
 
     const toastSuggess = () => {
         if (altWorst >= 0) {
-            toast(t('UI_SUGGESS_GOOD'))
+            toast(
+                <span
+                    dangerouslySetInnerHTML={{ __html: t('UI_SUGGESS_GOOD') }}
+                />
+            )
             return
         }
 
