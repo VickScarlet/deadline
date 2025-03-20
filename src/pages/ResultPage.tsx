@@ -215,7 +215,8 @@ export function ResultPage({
                         </b>
                     </li>
                 }
-            </ul>
+            </ul>,
+            { autoClose: false }
         )
         selected.filter(a => a >= 0).map((s, i) => alts[i][s])
     }
