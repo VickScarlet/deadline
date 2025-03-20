@@ -200,8 +200,10 @@ export function ResultPage({
                     .map((s, i) => ({ i, a: alts[i][s] }))
                     .filter(a => a.a < 0)
                     .map(({ i }, n) => (
-                        <li key={i}>
-                            <span>{n + 1}.</span>
+                        <li key={i} style={{ display: 'inline-flex' }}>
+                            <span style={{ flex: 'none', paddingRight: 5 }}>
+                                {n + 1}.
+                            </span>
                             <span
                                 dangerouslySetInnerHTML={{
                                     __html: t(questions[i].suggess),
@@ -209,6 +211,9 @@ export function ResultPage({
                             />
                         </li>
                     ))}
+                <li>
+                    <br />
+                </li>
                 {
                     <li>
                         <span
