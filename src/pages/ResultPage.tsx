@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useAnimate } from 'motion/react'
 import { useLanguage, useCountdown } from '@/hooks'
-import type { Country, Age, Sex, Achivement } from '@/data'
+import type { Country, Age, Sex, Achivement, Question } from '@/data'
 import {
     query,
     check,
@@ -29,12 +29,6 @@ export interface ResultPageProps {
     onBack: () => void
 }
 
-interface QuestionItem {
-    question: string
-    options: string[]
-    suggess: string
-}
-
 export function ResultPage({
     options: { country, age, sex, start },
     onBack,
@@ -45,7 +39,7 @@ export function ResultPage({
     const [alter, setAlter] = useState(0)
     const [time, setTime] = useState(0)
     const [countdown, setCountdown] = useCountdown(0, start)
-    const [questions, setQuestions] = useState<QuestionItem[]>([])
+    const [questions, setQuestions] = useState<Question[]>([])
     const [alts, setAlts] = useState<number[][]>([])
     const [cursor, setCursor] = useState(0)
     const [selected, setSelected] = useState<number[]>([])
@@ -201,9 +195,9 @@ export function ResultPage({
         toast(
             <ul style={{ lineHeight: 1.2 }}>
                 {selected
-                    .map((s, i) => ({ i, a: alts[i][s] }))
+                    .map((s, i) => ({ s, i, a: alts[i][s] }))
                     .filter(a => a.a < 0)
-                    .map(({ i }, n) => (
+                    .map(({ s, i }, n) => (
                         <li
                             key={i}
                             style={{
@@ -216,7 +210,12 @@ export function ResultPage({
                             </span>
                             <span
                                 dangerouslySetInnerHTML={{
-                                    __html: t(questions[i].suggess),
+                                    __html: t(
+                                        questions[i].suggess[
+                                            questions[i].options[s].suggess ??
+                                                'default'
+                                        ]
+                                    ),
                                 }}
                             />
                         </li>
@@ -308,13 +307,15 @@ export function ResultPage({
                                     type="radio"
                                     id={`option${i}`}
                                     name={`question${cursor}`}
-                                    value={opt}
+                                    value={opt.opt}
                                     checked={selected[cursor] === i}
                                     onChange={e =>
                                         e.target.checked && onSelect(i)
                                     }
                                 />
-                                <label htmlFor={`option${i}`}>{t(opt)}</label>
+                                <label htmlFor={`option${i}`}>
+                                    {t(opt.opt)}
+                                </label>
                             </li>
                         ))}
                     </ul>

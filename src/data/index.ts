@@ -53,12 +53,16 @@ export type Alts = AltNormal | AltRandom
 export interface QuestionOption {
     opt: string
     alt: Alts
+    suggess?: string
 }
 export interface Question {
     id: number
     question: string
     options: QuestionOption[]
-    suggess: string
+    suggess: {
+        default: string
+        [key: string]: string
+    }
 }
 
 export interface Random {
@@ -227,10 +231,7 @@ interface AltsData {
 }
 
 export async function getQuestions(country: Country, age: Age, sex: Sex) {
-    const questions = query('question').map(({ options, ...other }) => ({
-        options: options.map(({ opt }) => opt),
-        ...other,
-    }))
+    const questions = query('question')
     const q = await database.get<AltsData>('questions', [
         country.value,
         age.value,

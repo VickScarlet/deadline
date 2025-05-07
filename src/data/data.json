@@ -146,6 +146,24 @@
                 }
             },
             {
+                "id": "健康加餐",
+                "lang": {
+                    "en": "Add one healthy snack per day, such as nuts, eggs, yogurt, or oats. Increase your intake of whole grains and quality protein during meals. Try tracking your diet to ensure your daily calorie intake slightly exceeds your basal metabolic rate.",
+                    "zh": "每天增加1餐健康加餐，如坚果、鸡蛋、酸奶或燕麦。三餐中适量增加主食与优质蛋白摄入。可尝试记录饮食，确保每日摄入热量略高于基础代谢水平",
+                    "zh-HK": "每天增加1餐健康加餐，如堅果、雞蛋、優格或燕麥。三餐中適量增加主食與優質蛋白的攝取。可以嘗試記錄飲食，確保每日攝取的熱量略高於基礎代謝率。",
+                    "ja": "毎日1回、ナッツ、卵、ヨーグルト、オートミールなどの健康的な間食を追加しましょう。3食の中では主食と良質なたんぱく質を適度に増やしてください。食事内容を記録し、1日の摂取カロリーが基礎代謝量を少し上回るよう意識すると良いです。"
+                }
+            },
+            {
+                "id": "安排休息",
+                "lang": {
+                    "en": "Take at least two rest days each week. Consider replacing some intense workouts with stretching or walking. After exercise, make sure to replenish nutrients and stay hydrated to help your body recover.",
+                    "zh": "每周安排不少于2天的休息日，可将部分剧烈运动替换为拉伸或散步。运动后注意补充营养与水分，保持身体恢复平衡",
+                    "zh-HK": "每週安排不少於2天的休息日，可將部分劇烈運動替換為伸展或散步。運動後注意補充營養與水分，幫助身體恢復平衡。",
+                    "ja": "週に最低2日は休息日を設け、激しい運動の一部をストレッチや散歩に置き換えることを検討しましょう。運動後は栄養と水分をしっかり補給し、体のバランスを整えることが大切です。"
+                }
+            },
+            {
                 "id": "UI_SUGGESS_GOOD",
                 "lang": {
                     "en": "<b><span style=\"color:#49da54;\">Your lifestyle habits are very healthy\r\nPlease continue to maintain them</span></b>",
@@ -4813,7 +4831,8 @@
                                 -1,
                                 -3
                             ]
-                        }
+                        },
+                        "suggess": "special1"
                     },
                     {
                         "opt": "Q1健康",
@@ -4856,7 +4875,10 @@
                         }
                     }
                 ],
-                "suggess": "控制健康体重"
+                "suggess": {
+                    "default": "控制健康体重",
+                    "special1": "健康加餐"
+                }
             },
             {
                 "question": "Q2你的运动频率如何",
@@ -4909,10 +4931,14 @@
                                 -1,
                                 -4
                             ]
-                        }
+                        },
+                        "suggess": "special1"
                     }
                 ],
-                "suggess": "定期运动"
+                "suggess": {
+                    "default": "定期运动",
+                    "special1": "安排休息"
+                }
             },
             {
                 "question": "Q3你的睡眠是否充足",
@@ -4958,7 +4984,9 @@
                         }
                     }
                 ],
-                "suggess": "保持健康睡眠"
+                "suggess": {
+                    "default": "保持健康睡眠"
+                }
             },
             {
                 "question": "Q4你的饮酒频率是",
@@ -5011,7 +5039,9 @@
                         }
                     }
                 ],
-                "suggess": "戒酒"
+                "suggess": {
+                    "default": "戒酒"
+                }
             },
             {
                 "question": "Q5你的吸烟频率是",
@@ -5074,7 +5104,9 @@
                         }
                     }
                 ],
-                "suggess": "戒烟"
+                "suggess": {
+                    "default": "戒烟"
+                }
             },
             {
                 "question": "Q6你的压力与情绪状态如何",
@@ -5117,7 +5149,9 @@
                         }
                     }
                 ],
-                "suggess": "降低身心压力"
+                "suggess": {
+                    "default": "降低身心压力"
+                }
             }
         ],
         "random": [
@@ -5218,6 +5252,6 @@
             }
         }
     },
-    "version": "2025-03-20T11:39:43.547Z",
-    "timestamp": "2025-03-20T11:39:43.547Z"
+    "version": "2025-05-07T06:13:30.560Z",
+    "timestamp": "2025-05-07T06:13:30.560Z"
 }
